@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Eban.server.mapper.DepartmentMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.Eban.server.pojo.Department">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="parentId" property="parentId"/>
+        <result column="depPath" property="depPath"/>
+        <result column="enabled" property="enabled"/>
+
+        <result column="isParent" property="isParent"/>
+    </resultMap>
+
+    <resultMap id="getDepartmentsWithChildren" type="com.Eban.server.pojo.Department" extends="BaseResultMap">
+        <!--        递归查询，操作简便，通过递归父Id查询所有子部门，然后广度优先查找-->
+        <collection property="children" ofType="com.Eban.server.pojo.Department"
+                    select="com.Eban.server.mapper.DepartmentMapper.getAllDepartments"
+                    column="id"
+        >
+        </collection>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id
+        ,
+        name, parentId, depPath, enabled, isParent
+    </sql>
+
+    <!--    获取所有部门及子部门-->
+    <select id="getAllDepartments" resultMap="getDepartmentsWithChildren">
+        SELECT
+        <include refid="Base_Column_List"></include>
+        FROM
+        t_department
+        WHERE
+        parentId = #{parentId}
+    </select>
+
+    <!--    添加部门,虽然是添加，但在这里应该是select标签，因为要选择存储过程,statementType有三个选项：
+            statement选项就是原生sql语句（不预处理），获取参数用$; prepared就是默认的，会预处理; callable就是调用存储过程的-->
+    <!--        需要注意这里的入参出参都是从实体类来的，因此需要看情况更改对应pojo类属性，在存储过程中的参数只要顺序对应即可，名称可以不对应，
+    例如下面出参的id在存储过程中是用result2表示的-->
+    <select id="addDepartment" statementType="CALLABLE">
+        call addDep(#{name,mode=IN,jdbcType=VARCHAR}, #{parentId,mode=IN,jdbcType=INTEGER},#{enabled,mode=IN,jdbcType=BOOLEAN},
+            #{result,mode=OUT,jdbcType=INTEGER},#{id,mode=OUT,jdbcType=INTEGER})
+    </select>
+
+
+    <!--    删除部门，方式同上添加部门-->
+    <select id="deleteDepartmentById" statementType="CALLABLE">
+        call deleteDep(#{id,mode=IN,jdbcType=INTEGER},#{result,mode=OUT,jdbcType=INTEGER})
+    </select>
+
+
+</mapper>

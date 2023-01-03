@@ -1,0 +1,35 @@
+package com.Eban.generator.pojo;
+
+import com.baomidou.mybatisplus.annotation.TableName;
+import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author LBY
+ * @since 2022-08-13
+ */
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@TableName("t_admin_role")
+@ApiModel(value="AdminRole对象", description="")
+public class AdminRole implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @ApiModelProperty(value = "用户id")
+    private Integer adminId;
+
+    @ApiModelProperty(value = "权限id")
+    private Integer rid;
+
+
+}

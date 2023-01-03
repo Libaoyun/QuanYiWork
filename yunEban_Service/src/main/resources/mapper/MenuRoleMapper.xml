@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Eban.server.mapper.MenuRoleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.Eban.server.pojo.MenuRole">
+        <result column="id" property="id"/>
+        <result column="mid" property="mid"/>
+        <result column="rid" property="rid"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id
+        ,
+        mid, rid
+    </sql>
+
+    <!--    更新角色对应的菜单信息，这里仅需添加即可,因为全部清空了-->
+    <insert id="insertRoleMenu">
+        insert into t_menu_role(mid, rid)
+        values
+        <foreach collection="mids" item="mid" separator=",">
+            (#{mid}, #{rid})
+        </foreach>
+    </insert>
+
+</mapper>
