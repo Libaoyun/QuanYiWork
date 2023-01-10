@@ -32,10 +32,12 @@ public class Swagger2Config extends WebMvcConfigurationSupport {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
+                // 哪些包需要被扫描生成接口文档
                 .apis(RequestHandlerSelectors.basePackage("com.Eban.server.controller"))
+                // 具体到包下的哪些路径
                 .paths(PathSelectors.any())
                 .build()
-                //配置全局登录
+                //配置全局登录携带token
                 .securityContexts(securityContexts())
                 .securitySchemes(securitySchemes());
     }
@@ -51,7 +53,7 @@ public class Swagger2Config extends WebMvcConfigurationSupport {
     }
 
 
-//    下面是用来配置访问swagger文档时需要登录的问题，也使用token
+//    下面是用来配置访问swagger文档时需要登录的问题，用于设置全局变量token，以后访问时就可以自动携带token
     private List<ApiKey> securitySchemes() {
 //        设置请求头信息
         List<ApiKey> apiKeys = new ArrayList<>();
@@ -74,7 +76,8 @@ public class Swagger2Config extends WebMvcConfigurationSupport {
 
     private List<SecurityReference> defaultAuth() {
         List<SecurityReference> list = new ArrayList<>();
-        AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
+        AuthorizationScope authorizationScope = new AuthorizationScope("global",
+                "accessEverything");
         AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
         authorizationScopes[0] = authorizationScope;
         list.add(new SecurityReference("Authorization", authorizationScopes));

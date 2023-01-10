@@ -34,10 +34,10 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements IM
 
     @Override
     public List<Menu> getMenusByAdminId() {
-
 //        通过登录后的Security上下文全局用户信息来获其取id
 //        return menuMapper.getMenusByAdminId(((Admin) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId());
-        Integer adminId = ((Admin) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId();
+        Integer adminId = ((Admin) SecurityContextHolder.getContext().
+                getAuthentication().getPrincipal()).getId();
         ValueOperations<String, Object> valueOperations = redisTemplate.opsForValue();
 
 //        从redis获取当前用户对应菜单

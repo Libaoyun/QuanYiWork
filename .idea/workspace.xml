@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b3e1afca-b68e-4a2e-8bf3-714c46612aaf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/springsecurityoauth2-demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/config/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/config/Swagger2Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/CaptchaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/CaptchaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/config/Swagger2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/config/Swagger2Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/mapper/DepartmentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/mapper/DepartmentMapper.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="D:\KGC\maven\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2DFS0v1cl1VEO0ofwUZVcrCz6Qo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/projects/Online-ntelligent-office/yunEban_Service/springsecurityoauth2-demo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;f23f0ba577e5c315d844de3fee9852c7&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\Online-ntelligent-office\yunEban_Service\yunEban_Service\src\main\java\com\Eban\server\config" />
+      <recent name="D:\projects\Online-ntelligent-office\yunEban_Service\yunEban_Service\src\main\resources\mapper" />
+      <recent name="D:\projects\Online-ntelligent-office\yunEban_Service\yunEban_Service\src\main\java\com\Eban\server\service\impl" />
+      <recent name="D:\projects\Online-ntelligent-office\yunEban_Service\yunEban_Service\src\main\java\com\Eban\server\service" />
+      <recent name="D:\projects\Online-ntelligent-office\yunEban_Service\yunEban_Service\src\main\java\com\Eban\server\pojo" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.easyBanApplication">
+    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Eban.generator.CodeGenerator" />
+      <module name="yunEban_generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Eban.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Eban.generator.TestCodeGenerator" />
+      <module name="yunEban_generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Eban.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Eban.server.test.test" />
+      <module name="yunEban_Service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Eban.server.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testTwo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Eban.server.test.testTwo" />
+      <module name="yunEban_Service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Eban.server.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Springsecurityoauth2DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="springsecurityoauth2-demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.springsecurityoauth2demo.Springsecurityoauth2DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SsoDemoClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="sso-demo-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.ssodemoclient.SsoDemoClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YunEbanServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="yunEban" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.eban.service.YunEbanServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="easyBanApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="yunEban_Service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.Eban.server.easyBanApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Eban.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.easyBanApplication" />
+        <item itemvalue="Application.TestCodeGenerator" />
+        <item itemvalue="Application.testTwo" />
+        <item itemvalue="Application.test" />
+        <item itemvalue="Application.CodeGenerator" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3e1afca-b68e-4a2e-8bf3-714c46612aaf" name="Changes" comment="" />
+      <created>1660293122320</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660293122320</updated>
+      <workItem from="1660293124738" duration="3889000" />
+      <workItem from="1660367497097" duration="182000" />
+      <workItem from="1660367695715" duration="7505000" />
+      <workItem from="1660536979703" duration="10196000" />
+      <workItem from="1660552141105" duration="4809000" />
+      <workItem from="1660624063979" duration="15807000" />
+      <workItem from="1660643713768" duration="2042000" />
+      <workItem from="1660712002446" duration="8121000" />
+      <workItem from="1660799550715" duration="7758000" />
+      <workItem from="1660881601151" duration="4705000" />
+      <workItem from="1660969071611" duration="9160000" />
+      <workItem from="1661150804555" duration="7507000" />
+      <workItem from="1661231811583" duration="12147000" />
+      <workItem from="1661317239528" duration="3183000" />
+      <workItem from="1661400254828" duration="4232000" />
+      <workItem from="1661486421013" duration="6344000" />
+      <workItem from="1661573950556" duration="5945000" />
+      <workItem from="1661657689962" duration="2415000" />
+      <workItem from="1661748210900" duration="1114000" />
+      <workItem from="1661841318367" duration="1136000" />
+      <workItem from="1661919358146" duration="3248000" />
+      <workItem from="1661997594841" duration="3234000" />
+      <workItem from="1662097571524" duration="1904000" />
+      <workItem from="1662337608724" duration="1360000" />
+      <workItem from="1662461074077" duration="2047000" />
+      <workItem from="1662508005468" duration="600000" />
+      <workItem from="1662596038311" duration="7382000" />
+      <workItem from="1662614967298" duration="2786000" />
+      <workItem from="1662680877806" duration="4634000" />
+      <workItem from="1663211798076" duration="4019000" />
+      <workItem from="1663286587745" duration="8147000" />
+      <workItem from="1663547670602" duration="73000" />
+      <workItem from="1663640896663" duration="1420000" />
+      <workItem from="1663812073622" duration="4248000" />
+      <workItem from="1664177411431" duration="1322000" />
+      <workItem from="1664345435200" duration="120000" />
+      <workItem from="1664432583086" duration="1823000" />
+      <workItem from="1664977308689" duration="228000" />
+      <workItem from="1665139303538" duration="2337000" />
+      <workItem from="1665302052565" duration="3204000" />
+      <workItem from="1665371174086" duration="49000" />
+      <workItem from="1665741278983" duration="867000" />
+      <workItem from="1665990313634" duration="2263000" />
+      <workItem from="1666077264681" duration="625000" />
+      <workItem from="1666092092411" duration="2629000" />
+      <workItem from="1666141633948" duration="865000" />
+      <workItem from="1666160337869" duration="4097000" />
+      <workItem from="1667526753491" duration="665000" />
+      <workItem from="1672480645775" duration="697000" />
+      <workItem from="1672637489578" duration="1026000" />
+      <workItem from="1672656865471" duration="2208000" />
+      <workItem from="1672723133278" duration="2057000" />
+      <workItem from="1672819075754" duration="215000" />
+      <workItem from="1672819310028" duration="9120000" />
+      <workItem from="1672916445002" duration="6486000" />
+      <workItem from="1672993404902" duration="5011000" />
+      <workItem from="1673157892947" duration="8544000" />
+      <workItem from="1673244967032" duration="4827000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

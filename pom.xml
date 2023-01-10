@@ -7,6 +7,7 @@
         <module>yunEban_Service</module>
         <module>yunEban_generator</module>
         <module>testMP</module>
+        <module>springsecurityoauth2-demo</module>
     </modules>
 
     <!--    该项目仅作为后端的pom管理项目，因此多余的全都不要，只需要纯净的SB的pom-->

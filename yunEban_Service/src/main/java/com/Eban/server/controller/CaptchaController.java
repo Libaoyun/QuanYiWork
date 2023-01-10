@@ -32,14 +32,12 @@ public class CaptchaController {
 //    produces可以指定返回什么类型，这样在用swagger文档时就能直接看到验证码图片了，否则就是一堆乱码
     @GetMapping(value = "/captcha", produces = "image/jpeg")
     public void getCaptcha(HttpServletRequest request, HttpServletResponse response){
-
         //定义response输出类型为image/jpeg
         response.setDateHeader("Expires",0);
         response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
         response.addHeader("Cache-Control", "post-check=0, pre-check=0");
         response.setHeader("Pragma", "no-cache");
         response.setContentType("image/jpeg");
-
         //---------------------------生成验证码 begin----------------------
         //获取验证码文本内容
         String text = defaultKaptcha.createText();

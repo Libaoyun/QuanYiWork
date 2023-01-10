@@ -32,8 +32,12 @@ public class LoginController {
 
     @ApiOperation("登陆之后返回Token")
     @PostMapping("/login")
-    public RespBean login(@RequestBody AdminLoginRequest adminLoginRequest, HttpServletRequest httpServletRequest){
-        return adminService.login(adminLoginRequest.getUsername(), adminLoginRequest.getPassword(), adminLoginRequest.getCode(), httpServletRequest);
+    public RespBean login(@RequestBody AdminLoginRequest adminLoginRequest,
+                          HttpServletRequest httpServletRequest){
+        return adminService.login(adminLoginRequest.getUsername(),
+                adminLoginRequest.getPassword(),
+                adminLoginRequest.getCode(),
+                httpServletRequest);
     }
 
     @ApiOperation("获取当前用户对象信息")

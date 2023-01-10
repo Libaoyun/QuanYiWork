@@ -22,7 +22,9 @@ import java.util.List;
  * @since 2022-08-13
  */
 @RestController
-@RequestMapping("/system/cfg")  //这里不能直接menu，因为不同菜单的路径有些会被拦截，这里菜单泛指系统管理菜单
+//这里不能直接menu，因为不同菜单的路径有些会被拦截，这里菜单泛指系统管理菜单
+@RequestMapping("/system/cfg")
+// FIXME 这里用这个路径没问题，该controller只是用于获取菜单，其余功能分布在其他接口，因为和数据库对应，其余接口有其余api（即数据库url）
 public class MenuController {
 
     @Autowired
