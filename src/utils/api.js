@@ -6,14 +6,15 @@ import {Message} from "element-ui";
 /*下面为axios添加拦截器，用于某些错误的统一处理，否则每个地方在axios请求后
 * 都要判断响应码然后提示相应信息，太麻烦
 *
-* 下面的success不是代表请求一定成功了，而只是请求到了后端接口，
-* 但是后台可能会判断得出该用户当前操作无权限或其他某些错误，后台也会返回指定的相应码(与前端响应码区分开)
+* 下面的success仅代表请求到了后端接口，而后端返回状态码code就不一定时200了
+* 后台可能会判断得出该用户当前操作无权限或其他某些错误，后台也会返回指定的相应码(与前端响应码区分开)
 * 因此在处理之前需要统一拦截，做出某些处理后再说*/
 
 axios.interceptors.response.use(success => {
-//    业务逻辑错误,这里status是http的，只要请求到了后台接口就是200
+//    业务逻辑错误,这里status是http的，只要请求到了后台接口就是200（也就是success相当于200）
     if (success.status && success.status === 200) {
         //这里不一一列举，简单示意部分后台返回的状态码
+        // FIXME 可以反着来，if...code===200则成功，后面统一处理其余后端情况
         if (success.data.code == 500 || success.data.code == 401 || success.data.code == 403) {
             Message.error({message: success.data.message})
             //业务逻辑错误，只需返回空即可，既然错了后面也不会对res进行二次处理

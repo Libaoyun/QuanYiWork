@@ -2,7 +2,7 @@
   <div>
     <el-container style="height: 500px; border: 1px solid #eee">
       <el-header class="header">
-        <div class="title">云E办</div>
+        <div class="title">全易在线办公系统</div>
         <el-dropdown class="dropdown" @command = "commandHandler">
           <span class="el-dropdown-link">
             {{ user.name }}<i><img :src="user.userFace" alt="用户头像"></i>

@@ -2,7 +2,6 @@
 import {getRequest} from "./api";
 
 export const initMenu = (router, store) =>{
-    // console.log("0101")
     if (store.state.routes.length > 0){
         return ;
     }
@@ -56,7 +55,6 @@ export const formatRoutes = (routes) => {
                     require(['../views/sys/' + component + '.vue'], resolve);
                 } else {
                     require(['../views/404'], resolve);
-
                 }
             }
         }

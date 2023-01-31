@@ -196,16 +196,16 @@ export default {
 
 .main-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   margin-top: 10px;
   flex-wrap: wrap;
 
 }
 
 .box-card {
-  width: 305px;
+  width: 325px;
   height: 310px;
-  margin-right: 10px;
+  margin-right: 20px;
   margin-top: 8px;
 }
 

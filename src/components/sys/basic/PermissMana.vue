@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="toolBar">
-      <el-input placeholder="请输入角色英文名称" v-model="role.name" class=".el-input">
+      <el-input placeholder="请输入角色英文名称" v-model="role.name" class="el-input">
 <!--      应Security要求，需要在角色前加上ROLE_，这也是与数据库对应   -->
         <template slot="prepend">ROLE_</template>
       </el-input>
-      <el-input placeholder="请输入角色中文名称" v-model="role.nameZh" class=".el-input" @keyup.enter.native = addRole>
+      <el-input placeholder="请输入角色中文名称" v-model="role.nameZh" class="el-input" @keyup.enter.native = addRole>
       </el-input>
       <el-button icon="el-icon-plus" type="primary" @click="addRole">添加</el-button>
     </div>
@@ -14,7 +14,9 @@
     <div class="mainInfo">
 <!--      according是手风琴方式展示，@change是打开折叠面板后的操作； v-model代表当前展开哪个，若-1则全部折叠-->
       <el-collapse v-model="activeName" accordion @change="changeSelect">
-        <el-collapse-item :title="role.nameZh" :key="index" :name="role.id" v-for="(role, index) in roles">
+<!--               :name是值，title是展示的，最终删改时用的还是name，因为他代表数据实际的内容。       -->
+        <el-collapse-item :title="role.nameZh" :key="index"
+                          :name="role.id" v-for="(role, index) in roles">
 <!--          以卡片形式展示内容-->
           <el-card class="box-card">
             <div slot="header" class="clearfix">
@@ -174,7 +176,7 @@ export default {
 <style>
   .toolBar{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
   }
   .toolBar .el-input{
     width: 280px;

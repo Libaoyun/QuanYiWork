@@ -13,7 +13,7 @@
         :data="depData"
         :props="defaultProps"
         :filter-node-method="filterNode"
-        :expand-on-click-node="false"草
+        :expand-on-click-node="false"
         ref="tree">
       <span class="custom-tree-node" style="display: flex;justify-content: space-between;width: 100%" slot-scope="{ node, data }">
         <span>{{ data.name }}</span>

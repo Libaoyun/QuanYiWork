@@ -1,4 +1,4 @@
-import Vue from 'vue'
+ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import ElementUI from 'element-ui';
@@ -44,6 +44,8 @@ router.beforeEach((to, from, next) => {
     next();
   //  如果未登录状态，那就先不用加载路由，也不存信息
   }else {
+    next();
+    /*
     //如果未登录过，且要去登录就放行
     if (to.path === '/login'){
       console.log("to == /login(未登录)")
@@ -52,9 +54,11 @@ router.beforeEach((to, from, next) => {
     //如果未登录过而且要去其他有效地址，那就先跳转至登录页，登录成功后直接跳转到刚才想去的地址而不是直接首页！
     else {
       console.log("to == /重定向参数，(未登录)")
-      //注意这里?redirect前面不要加/（如果前面是/login），路由传参无需/，而是直接?后面参数就可以了！！
+      //注意这里?redirect前面不要加/（如果前面是/login）
+      //路由传参无需/，而是直接?后面参数就可以了！！
       next('/login?redirect=' + to.path)
     }
+     */
   }
 })
 

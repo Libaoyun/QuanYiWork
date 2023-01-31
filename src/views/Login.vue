@@ -81,8 +81,6 @@ export default {
               //跳转首页
               let path = this.$route.query.redirect;
               console.log("将要跳转首页或指定地址，已登录")
-              //？？？？？？？？这里必须跳转两次才可以，不明觉厉，否则会报异常阻止
-              //报Navigation cancelled from "/login" to "/home" with a new navigation.
               this.$router.replace((path === '/login' || path === undefined) ? '/home' : path).catch(() =>
                   this.$router.replace((path === '/login' || path === undefined) ? '/home' : path)
               )

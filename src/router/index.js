@@ -32,6 +32,12 @@ const routes = [
         hidden: true
     },
 
+    {
+        path: '/empBasic',
+        name: 'empBasic',
+        component: () => import('../views/emp/EmpBasic'),
+    }
+
     // {
     //     path: '/home',
     //     name: '导航一',
