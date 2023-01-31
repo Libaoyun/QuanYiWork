@@ -12,14 +12,16 @@
         <module name="sso-demo-client" />
         <module name="yunEban_Service" />
         <module name="springsecurityoauth2-demo" />
+        <module name="springdataredis-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Service" target="1.8" />
+      <module name="service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springdataredis-demo" options="-parameters" />
       <module name="springsecurityoauth2-demo" options="-parameters" />
       <module name="sso-demo-client" options="-parameters" />
       <module name="testMP" options="-parameters" />

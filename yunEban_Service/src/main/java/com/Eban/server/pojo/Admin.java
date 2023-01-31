@@ -55,7 +55,10 @@ public class Admin implements Serializable, UserDetails {
     private String address;
 
 
-    //这里的是否启用的getter属性，和继承的UserDetails接口中的isEnabled会重复，因此会报重载错误，所以必须要舍去这里的getter方法
+    /**
+     * 这里的是否启用的getter属性，和继承的UserDetails接口中的isEnabled会重复，
+     * 因此会报重载错误，所以必须要舍去这里的getter方法
+     */
     @Getter(AccessLevel.NONE)
     @ApiModelProperty(value = "是否启用")
     private Boolean enabled;

@@ -5,16 +5,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3e1afca-b68e-4a2e-8bf3-714c46612aaf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/springsecurityoauth2-demo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/config/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/config/Swagger2Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/CaptchaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/CaptchaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/maven_wrapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/service.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springdataredis-demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springsecurityoauth2-demo/springsecurityoauth2-demo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springsecurityoauth2-demo/target/classes/com/example/springsecurityoauth2demo/Springsecurityoauth2DemoApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springsecurityoauth2-demo/target/classes/com/example/springsecurityoauth2demo/config/AuthorizationServerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springsecurityoauth2-demo/target/classes/com/example/springsecurityoauth2demo/config/ResourceServerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springsecurityoauth2-demo/target/classes/com/example/springsecurityoauth2demo/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springsecurityoauth2-demo/target/classes/com/example/springsecurityoauth2demo/config/zhenghe/JwtTokenEnhancer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springsecurityoauth2-demo/target/classes/com/example/springsecurityoauth2demo/config/zhenghe/JwtTokenStoreConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springsecurityoauth2-demo/target/classes/com/example/springsecurityoauth2demo/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springsecurityoauth2-demo/target/classes/com/example/springsecurityoauth2demo/pojo/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springsecurityoauth2-demo/target/classes/com/example/springsecurityoauth2demo/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/null/AdminMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sso-demo-client/target/classes/com/example/ssodemoclient/SsoDemoClientApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sso-demo-client/target/classes/com/example/ssodemoclient/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/config/MybatisPlusConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/PositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/PositionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/converter/DateConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/converter/DateConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/easyBanApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/easyBanApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/exception/GlobalException.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/exception/GlobalException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/mapper/EmployeeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/mapper/EmployeeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/pojo/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/pojo/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/pojo/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/pojo/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/pojo/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/pojo/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/pojo/Joblevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/pojo/Joblevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/pojo/Nation.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/pojo/Nation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/pojo/PoliticsStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/pojo/PoliticsStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/pojo/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/pojo/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/service/IEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/service/IEmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/service/impl/EmployeeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/resources/mapper/DepartmentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/resources/mapper/DepartmentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/resources/mapper/EmployeeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/resources/mapper/EmployeeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/config/MybatisPlusConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/config/MybatisPlusConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/config/Swagger2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/config/Swagger2Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/config/security/component/JwtTokenUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/config/security/component/JwtTokenUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/CaptchaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/CaptchaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/EmployeeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/PermissionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/PermissionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/PositionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/PositionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/converter/DateConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/converter/DateConverter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/easyBanApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/easyBanApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/exception/GlobalException.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/exception/GlobalException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/mapper/EmployeeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/mapper/EmployeeMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/pojo/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/pojo/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/service/IEmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/service/IEmployeeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/service/impl/EmployeeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/service/impl/EmployeeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/service/impl/MenuRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/service/impl/MenuRoleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/service/impl/MenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/service/impl/MenuServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/mapper/DepartmentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/mapper/DepartmentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/mapper/EmployeeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/mapper/EmployeeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_generator/target/classes/com/Eban/generator/CodeGenerator$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_generator/target/classes/com/Eban/generator/CodeGenerator$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_generator/target/classes/com/Eban/generator/TestCodeGenerator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_generator/target/classes/com/Eban/generator/TestCodeGenerator$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_generator/target/classes/com/Eban/generator/TestCodeGenerator$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_generator/target/classes/com/Eban/generator/TestCodeGenerator$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yunEban_generator/target/classes/com/Eban/generator/TestCodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_generator/target/classes/com/Eban/generator/TestCodeGenerator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,13 +92,8 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="useMavenConfig" value="true" />
-        <option name="userSettingsFile" value="D:\KGC\maven\apache-maven-3.6.3\conf\settings.xml" />
+        <option name="userSettingsFile" value="E:\Maven\apache-maven-3.8.6\conf\settings.xml" />
       </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="2DFS0v1cl1VEO0ofwUZVcrCz6Qo" />
@@ -60,9 +109,10 @@
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/projects/Online-ntelligent-office/yunEban_Service/springsecurityoauth2-demo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/IdeaProjects/self/yunEban/service/springdataredis-demo&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -72,7 +122,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;f23f0ba577e5c315d844de3fee9852c7&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;2e03b5847d74825efeb72a4f21ecf29b&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -89,38 +139,12 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.easyBanApplication">
-    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.Eban.generator.CodeGenerator" />
-      <module name="yunEban_generator" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Eban.generator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestCodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.Eban.generator.TestCodeGenerator" />
       <module name="yunEban_generator" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.Eban.generator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.Eban.server.test.test" />
-      <module name="yunEban_Service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Eban.server.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -137,6 +161,45 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringdataredisDemoApplicationTests.testRedis1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springdataredis-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxx.springdataredisdemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxx.springdataredisdemo" />
+      <option name="MAIN_CLASS_NAME" value="com.xxx.springdataredisdemo.SpringdataredisDemoApplicationTests" />
+      <option name="METHOD_NAME" value="testRedis1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringdataredisDemoApplicationTests.testRedis4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springdataredis-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxx.springdataredisdemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxx.springdataredisdemo" />
+      <option name="MAIN_CLASS_NAME" value="com.xxx.springdataredisdemo.SpringdataredisDemoApplicationTests" />
+      <option name="METHOD_NAME" value="testRedis4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringdataredisDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springdataredis-demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xxx.springdataredisdemo.SpringdataredisDemoApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -178,10 +241,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.easyBanApplication" />
+        <item itemvalue="JUnit.SpringdataredisDemoApplicationTests.testRedis4" />
+        <item itemvalue="JUnit.SpringdataredisDemoApplicationTests.testRedis1" />
         <item itemvalue="Application.TestCodeGenerator" />
         <item itemvalue="Application.testTwo" />
-        <item itemvalue="Application.test" />
-        <item itemvalue="Application.CodeGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -251,10 +314,47 @@
       <workItem from="1672993404902" duration="5011000" />
       <workItem from="1673157892947" duration="8544000" />
       <workItem from="1673244967032" duration="4827000" />
+      <workItem from="1673867260282" duration="2714000" />
+      <workItem from="1673941794770" duration="1797000" />
+      <workItem from="1674030599176" duration="1147000" />
+      <workItem from="1674116350944" duration="2207000" />
+      <workItem from="1674118569237" duration="4626000" />
+      <workItem from="1674195959665" duration="7622000" />
+      <workItem from="1674799558936" duration="3735000" />
+      <workItem from="1674886864969" duration="11066000" />
+      <workItem from="1674972234871" duration="13410000" />
+      <workItem from="1675056990292" duration="8991000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/EmployeeController.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/EmployeeController.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,6 +1,10 @@
 package com.Eban.server.converter;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -10,16 +14,32 @@ import java.time.format.DateTimeFormatter;
  * @author: Libaoyun
  * @date: 2022-09-16 15:51
  **/
+//@Component
 public class DateConverter implements Converter<String, LocalDate> {
 
-//    这里是为了将前端传过来的字符串形式日期改为数据库对应的形式，而pojo中加的jsonformat是传给前端时转为固定格式字符串。
+    private static final Logger LOGGER = LoggerFactory.getLogger(DateConverter.class);
+
     @Override
     public LocalDate convert(String source) {
-//        Idea抛异常快捷键：alt + enter + T
         try {
             return LocalDate.parse(source, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+        return null;
     }
+/*    @Override
+    public LocalDate convert(String source) {
+        if(!source.matches("\\d{4}-\\d{2}-\\d{2}")){
+            LOGGER.error("Invalid date format for {}", source);
+            throw new IllegalArgumentException("Invalid date format");
+        }
+        try {
+            return LocalDate.parse(source, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        } catch (Exception e) {
+            LOGGER.error("Error parsing date {}", source, e);
+            throw e;
+        }
+    }*/
+
 }

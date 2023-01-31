@@ -1,14 +1,17 @@
 package com.Eban.server;
 
+//import com.Eban.server.converter.WebMvcConfig;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
 @EnableWebMvc
+//@Import(WebMvcConfig.class)
 @MapperScan("com.Eban.server.mapper")
 public class easyBanApplication {
     public static void main(String[] args) {
