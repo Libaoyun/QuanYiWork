@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3e1afca-b68e-4a2e-8bf3-714c46612aaf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/springsecurityoauth2-demo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/config/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/config/Swagger2Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/CaptchaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/CaptchaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/src/main/java/com/Eban/server/service/impl/MenuServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/config/Swagger2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/config/Swagger2Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/com/Eban/server/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yunEban_Service/target/classes/mapper/DepartmentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yunEban_Service/target/classes/mapper/DepartmentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,6 +242,8 @@
       <workItem from="1672993404902" duration="5011000" />
       <workItem from="1673157892947" duration="8544000" />
       <workItem from="1673244967032" duration="4827000" />
+      <workItem from="1673345435179" duration="138000" />
+      <workItem from="1675243396763" duration="938000" />
     </task>
     <servers />
   </component>
