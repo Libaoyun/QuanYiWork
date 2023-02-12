@@ -12,6 +12,7 @@ import store from './store'
 import {initMenu} from "./utils/menus";
 //导入font-awesome可以使用导航菜单的图标
 import 'font-awesome/css/font-awesome.css'
+ import {downloadRequest} from "./utils/download";
 
 //import会自动通过babel转为es5的语法require导入
 
@@ -26,6 +27,7 @@ Vue.prototype.getRequest = getRequest;
 Vue.prototype.postRequest = postRequest;
 Vue.prototype.putRequest = putRequest;
 Vue.prototype.deleteRequest = deleteRequest;
+Vue.prototype.downloadRequest = downloadRequest
 
 router.beforeEach((to, from, next) => {
   if (window.sessionStorage.getItem('tokenStr')){
@@ -44,8 +46,7 @@ router.beforeEach((to, from, next) => {
     next();
   //  如果未登录状态，那就先不用加载路由，也不存信息
   }else {
-    next();
-    /*
+    // next();
     //如果未登录过，且要去登录就放行
     if (to.path === '/login'){
       console.log("to == /login(未登录)")
@@ -58,7 +59,6 @@ router.beforeEach((to, from, next) => {
       //路由传参无需/，而是直接?后面参数就可以了！！
       next('/login?redirect=' + to.path)
     }
-     */
   }
 })
 

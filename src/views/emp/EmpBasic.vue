@@ -4,27 +4,51 @@
     <div style="display: flex; justify-content: space-between">
       <div>
         <el-input prefix-icon="el-icon-search"
-                  placeholder="请输入员工关键词"
-                  v-model='empName'
+                  placeholder="请输入姓名关键词"
+                  v-model='searchEmp.name'
                   clearable
                   @clear='loadEmpData'
                   @keydown.enter.native='loadEmpData'
                   style="width: 300px; margin-right: 6px"
         ></el-input>
-        <el-button type="primary" icon="el-icon-search">搜索</el-button>
-        <el-button type="primary"><i class="fa fa-angle-double-down"></i>高级搜索</el-button>
-      </div>
-      <div>
-        <el-button type="success">
-          <i class="fa fa-level-up" aria-hidden="true"></i>导入数据
+        <el-button :disabled="showAdvSer" type="primary" icon="el-icon-search" @click="handleAdvSer" >搜索</el-button>
+        <el-button type="primary" @click="displayAdvSer">
+          <i :class="advSerIcon"></i>高级搜索
         </el-button>
-        <el-button type="success">
-          <i class="fa fa-level-down"></i>导出数据
+      </div>
+
+      <div>
+        <el-upload
+            style="display: inline-flex; margin-right: 10px"
+            :before-upload="beforeUpload"
+            :on-success="onSuccess"
+            :on-error="onError"
+            :disabled="upload.forbidden"
+            :show-file-list="false"
+            :headers="upload.headers"
+            action="/api/employee/basic/import"
+            >
+          <el-button type="success" :icon="upload.icon" :disabled="upload.forbidden">
+           {{upload.text}}
+          </el-button>
+        </el-upload>
+
+        <el-button type="success" icon="el-icon-download" @click="handleExport">
+          导出数据
         </el-button>
         <el-button type="primary" icon="el-icon-plus" @click="showAddEmp">添加员工</el-button>
       </div>
     </div>
+    <Transition name="slide-fade">
+      <adv-search
+          v-show="showAdvSer"
+          @cancel="cancelAdvSer"
+          @search="handleAdvSer"
+      >
+      </adv-search>
+    </Transition>
 
+<!--    展示、添加、编辑员工-->
     <div style="margin-top: 10px">
       <template>
         <el-table
@@ -183,10 +207,10 @@
               label="操作"
               fixed="right"
               width="190">
-            <template>
-              <el-button style="padding: 4px" size="mini">编辑</el-button>
+            <template slot-scope="scope">
+              <el-button style="padding: 4px" size="mini" @click="showEditEmp(scope.row)">编辑</el-button>
               <el-button style="padding: 4px" size="mini" type="primary">查看高级资料</el-button>
-              <el-button style="padding: 4px" size="mini" type="danger">删除</el-button>
+              <el-button style="padding: 4px" size="mini" type="danger" @click="handleDelEmp(scope.row)">删除</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -203,13 +227,14 @@
         </div>
         <!--    添加员工    -->
         <el-dialog
+            @close="cancelDialog"
             title="添加员工"
             :visible.sync="dialogVisible"
             width="80%"
         >
           <!--        因为字段较多，如果传统方式可能不美观，因此使用表单+layOut布局
                       而且表单可以进行字段校验              -->
-          <el-form ref="empForm" :model="emp">
+          <el-form ref="empForm" :model="emp" :rules="rules">
             <el-row>
               <!--        24分栏，这里使用四列，进行分隔展示    -->
               <el-col :span="6">
@@ -249,9 +274,9 @@
                   <el-select v-model="emp.politicId" style="width: 200px" clearable placeholder="请选择政治面貌">
                     <el-option
                         v-for="item in politicStatus"
-                        :key="item.name"
+                        :key="item.id"
                         :label="item.name"
-                        :value="item.name">
+                        :value="item.id">
                     </el-option>
                   </el-select>
                 </el-form-item>
@@ -266,9 +291,9 @@
                   >
                     <el-option
                         v-for="item in nations"
-                        :key="item.name"
+                        :key="item.id"
                         :label="item.name"
-                        :value="item.name">
+                        :value="item.id">
                     </el-option>
                   </el-select>
                 </el-form-item>
@@ -316,9 +341,9 @@
                   >
                     <el-option
                         v-for="item in positions"
-                        :key="item.name"
+                        :key="item.id"
                         :label="item.name"
-                        :value="item.name">
+                        :value="item.id">
                     </el-option>
                   </el-select>
                 </el-form-item>
@@ -331,9 +356,9 @@
                   >
                     <el-option
                         v-for="item in jobLevels"
-                        :key="item.name"
+                        :key="item.id"
                         :label="item.name"
-                        :value="item.name">
+                        :value="item.id">
                     </el-option>
                   </el-select>
                 </el-form-item>
@@ -349,6 +374,7 @@
                     <div>
                       <el-tree :data="departments"
                                :props="defaultProps"
+                               default-expand-all
                                @node-click="handleNodeClick">
                       </el-tree>
                     </div>
@@ -391,6 +417,7 @@
                   <el-input
                       style="width: 170px;"
                       placeholder="请输入工号"
+                      disabled
                       prefix-icon="el-icon-edit"
                       v-model="emp.workID"
                   >
@@ -524,11 +551,19 @@
 
 
           <span slot="footer" class="dialog-footer">
-              <el-button @click="dialogVisible = false">取 消</el-button>
-              <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+              <el-button @click="handleCancelAdd">取 消</el-button>
+              <el-button type="primary" @click="handleAddEmp('empForm')">确 定</el-button>
             </span>
         </el-dialog>
 
+        <EditEmp
+            :empData="editEmp"
+            :department = "department"
+            @loadData="loadEmpData()"
+            v-if="showEdit"
+            @cancel="cancelEdit"
+        >
+        </EditEmp>
 
       </template>
     </div>
@@ -537,16 +572,38 @@
 
 <script>
 
+import EditEmp from "../../components/sys/emp/EditEmp";
+import AdvSearch from "../../components/sys/emp/AdvSearch";
 export default {
   name: "EmpBasic",
+  components: {EditEmp, AdvSearch},
   data() {
+    const validateID = (rule, value, callback) => {
+      let pattern =
+          /^[1-9]\d{5}(18|19|20)\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/;
+      if(!pattern.test(value)){
+        callback(new Error("身份证格式不正确!"))
+      }else {
+        callback()
+      }
+    };
+
     return {
       tableData: [],
       loading: false,
       currentPage: 1,
       size: 10,
       total: 100,
-      empName: '',
+      searchEmp: {
+        name: '',
+        nationId: null,
+        politicId: null,
+        posId: null,
+        jobLevelId: null,
+        engageForm: '',
+        departmentId: null,
+        dateScope: '',
+      },
       dialogVisible: false,
       emp: {
         name: '',
@@ -603,33 +660,11 @@ export default {
           }
         }]
       },
-      options: [
-        {
-          value: '选项1',
-          label: '黄金糕'
-        },
-        {
-          value: '选项2',
-          label: '双皮奶'
-        },
-        {
-          value: '选项3',
-          label: '蚵仔煎'
-        },
-        {
-          value: '选项4',
-          label: '龙须面'
-        },
-        {
-          value: '选项5',
-          label: '北京烤鸭'
-        }
-      ],
       nations: [],
       politicStatus: [],
       positions: [],
       jobLevels: [],
-      departments: [{a: 'aaa', name: 'name'}],
+      departments: [],
       tiptopDegrees: ['博士', '硕士', '本科', '大专', '高中', '初中', '小学', '其他'],
       selectedDep: '点击选择部门',
       depVisible: false,
@@ -637,20 +672,64 @@ export default {
       defaultProps: {
         children: 'children',
         label: 'name'
-      }
-
-
+      },
+      rules: {
+        name: [{required: true, message: '请输入员工姓名', trigger: 'blur'}],
+        gender: [{required: true, message: '请输入员工性别', trigger: 'blur'}],
+        birthday: [{required: true, message: '请输入出生日期', trigger: 'blur'}],
+        idCard: [
+            {required: true, message: '请输入员工身份证', trigger: 'blur'},
+            {validator: validateID, message: '身份证格式不正确!', trigger: 'blur'}
+        ],
+        wedLock: [{required: true, message: '请选择婚姻状况', trigger: 'blur'}],
+        nationId: [{required: true, message: '请选择民族', trigger: 'blur'}],
+        nativePlace: [{required: true, message: '请输入籍贯', trigger: 'blur'}],
+        politicId: [{required: true, message: '请选择政治面貌', trigger: 'blur'}],
+        email: [
+            {required: true, message: '请输入电子邮件', trigger: 'blur'},
+            {type: 'email', message: '电子邮件格式不正确!', trigger: 'blur'}
+        ],
+        phone: [{required: true, message: '请输入手机号', trigger: 'blur'}],
+        address: [{required: true, message: '请输入家庭住址', trigger: 'blur'}],
+        departmentId: [{required: true, message: '请选择所属部门', trigger: 'blur'}],
+        jobLevelId: [{required: true, message: '请选择职称', trigger: 'blur'}],
+        posId: [{required: true, message: '请选择职位', trigger: 'blur'}],
+        engageForm: [{required: true, message: '请选择聘用形式', trigger: 'blur'}],
+        tiptopDegree: [{required: true, message: '请选择最高学历', trigger: 'blur'}],
+        specialty: [{required: true, message: '请输入专业名称', trigger: 'blur'}],
+        school: [{required: true, message: '请输入毕业院校', trigger: 'blur'}],
+        beginDate: [{required: true, message: '请选择入职日期', trigger: 'blur'}],
+        workID: [{required: true, message: '请输入工号', trigger: 'blur'}],
+        conversionTime: [{required: true, message: '请选择转正日期', trigger: 'blur'}],
+        beginContract: [{required: true, message: '请选择合同开始日期', trigger: 'blur'}],
+        endContract: [{required: true, message: '请选择合同结束日期', trigger: 'blur'}],
+      },
+      showEdit: false,
+      editEmp: {},
+      department: '',
+      upload: {
+        text: '导入数据',
+        icon: 'el-icon-upload2',
+        forbidden: false,
+        headers: {
+          Authorization: window.sessionStorage.getItem('tokenStr'),
+        },
+      },
+      showAdvSer: false,
+      advSerIcon: 'fa fa-angle-double-down'
     }
   },
+
   mounted() {
-    this.loadEmpData();
+    this.loadEmpData()
     this.initData()
   },
+
   methods: {
 
     initData() {
       if (!window.sessionStorage.getItem("nations")) {
-        this.getRequest('/api/employee/basic/').then(res => {
+        this.getRequest('/api/employee/basic/nations').then(res => {
           if (res) {
             this.nations = res
             window.sessionStorage.setItem("nations", JSON.stringify(res))
@@ -659,8 +738,16 @@ export default {
       }else {
         this.nations = JSON.parse(window.sessionStorage.getItem('nations'))
       }
+
+      this.getRequest('/api/employee/basic/nations').then(res => {
+        if (res) {
+          this.nations = res
+          window.sessionStorage.setItem("nations", JSON.stringify(res))
+        }
+      })
+
       if (!window.sessionStorage.getItem("politicStatus")) {
-        this.getRequest('/api/employee/basic/').then(res => {
+        this.getRequest('/api/employee/basic/politic-status').then(res => {
           if (res) {
             this.politicStatus = res
             window.sessionStorage.setItem("politicStatus", JSON.stringify(res))
@@ -669,8 +756,16 @@ export default {
       }else {
         this.nations = JSON.parse(window.sessionStorage.getItem('politicStatus'))
       }
+
+      this.getRequest('/api/employee/basic/politic-status').then(res => {
+        if (res) {
+          this.politicStatus = res
+          window.sessionStorage.setItem("politicStatus", JSON.stringify(res))
+        }
+      })
+
       if (!window.sessionStorage.getItem("jobLevels")) {
-        this.getRequest('/api/employee/basic/').then(res => {
+        this.getRequest('/api/employee/basic/job-levels').then(res => {
           if (res) {
             this.jobLevels = res
             window.sessionStorage.setItem("jobLevels", JSON.stringify(res))
@@ -679,20 +774,35 @@ export default {
       }else {
         this.nations = JSON.parse(window.sessionStorage.getItem('jobLevels'))
       }
+
+      this.getRequest('/api/employee/basic/job-levels').then(res => {
+        if (res) {
+          this.jobLevels = res
+          window.sessionStorage.setItem("jobLevels", JSON.stringify(res))
+        }
+      })
+
       if (!window.sessionStorage.getItem("departments")) {
-        this.getRequest('/api/employee/basic/').then(res => {
+        this.getRequest('/api/employee/basic/departments').then(res => {
           if (res) {
             this.departments = res
             window.sessionStorage.setItem("departments", JSON.stringify(res))
           }
         })
       }else {
-        this.nations = JSON.parse(window.sessionStorage.getItem('jobLevels'))
+        this.nations = JSON.parse(window.sessionStorage.getItem('nations'))
       }
+
+      this.getRequest('/api/employee/basic/departments').then(res => {
+        if (res) {
+          this.departments = res
+          window.sessionStorage.setItem("departments", JSON.stringify(res))
+        }
+      })
     },
 
     getAllPositions(){
-      this.getRequest('/api/employee/basic/').then(res => {
+      this.getRequest('/api/employee/basic/positions').then(res => {
         if (res) {
           this.positions = res
         }
@@ -700,9 +810,9 @@ export default {
     },
 
     getMaxWorkID(){
-      this.getRequest('/api/employee/basic/').then(res => {
+      this.getRequest('/api/employee/basic/maxWorkId').then(res => {
         if (res) {
-          this.emp.workID = res
+          this.emp.workID = res.obj
         }
       })
     },
@@ -713,8 +823,120 @@ export default {
 
     handleNodeClick(data){
       this.selectedDep = data.name
+      this.emp.departmentId = data.id
       this.depVisible = false
       this.depFontColor = 'depSelected'
+    },
+
+    cancelDialog(){
+      this.depVisible = false
+    },
+
+    handleCancelAdd(){
+      this.depVisible = false
+      this.dialogVisible = false
+    },
+
+    handleAddEmp(formName){
+      console.log(this.emp)
+      this.$refs[formName].validate(valid => {
+        if (valid){
+          this.emp.workState = '在职'
+          this.postRequest('/api/employee/basic/', this.emp).then(res => {
+            if (res) {
+              for (const key in this.emp) {
+                this.emp[key] = null;
+              }
+              this.loadEmpData()
+              this.depVisible = false
+              this.dialogVisible = false
+            }
+          })
+        }
+      })
+    },
+
+    handleDelEmp(emp){
+      this.$confirm('确认删除员工[ ' + emp.name + ' ]吗?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.deleteRequest('/api/employee/basic/' + emp.id).then(res => {
+          if (res){
+            this.currentPage = 1
+            this.loadEmpData()
+          }
+        })
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '取消操作'
+        });
+      });
+    },
+
+    showEditEmp(empData){
+      this.editEmp = empData
+      this.department = empData.department
+      this.showEdit = true
+    },
+
+    cancelEdit(){
+      this.showEdit = false
+    },
+
+    handleExport(){
+      this.downloadRequest('/api/employee/basic/exports')
+      this.$message.success("导出成功!")
+    },
+
+    beforeUpload(){
+      this.upload.forbidden = true
+      this.upload.icon = 'el-icon-loading'
+      this.upload.text = '正在上传...'
+    },
+
+    onSuccess(){
+      this.upload.forbidden = false
+      this.upload.icon = 'el-icon-upload2'
+      this.upload.text = '导入文件'
+      this.$message.success("导入成功!")
+      this.loadEmpData()
+    },
+
+    onError(){
+      this.upload.forbidden = false
+      this.upload.icon = 'el-icon-upload2'
+      this.upload.text = '导入文件'
+      this.$message.error("导入失败!")
+    },
+
+    displayAdvSer(){
+      this.advSerIcon = this.advSerIcon === 'fa fa-angle-double-down' ? 'fa fa-angle-double-up' : 'fa fa-angle-double-down'
+      // this.getAllPositions()
+      this.showAdvSer = !this.showAdvSer
+    },
+
+    cancelAdvSer(){
+      this.advSerIcon = 'fa fa-angle-double-down'
+      this.depVisible = false
+      this.showAdvSer = false
+      for (let searchEmpKey in this.searchEmp) {
+        this.searchEmp[searchEmpKey] = '';
+      }
+    },
+
+    handleAdvSer(advSerInfo){
+      // 深拷贝可以保留之前的name，并集
+      Object.assign(this.searchEmp, advSerInfo)
+      this.loadEmpData()
+      this.advSerIcon = 'fa fa-angle-double-down'
+      this.depVisible = false
+      this.showAdvSer = false
+      for (let searchEmpKey in this.searchEmp) {
+        this.searchEmp[searchEmpKey] = '';
+      }
     },
 
     //表格样式
@@ -727,13 +949,20 @@ export default {
         return 'success-row';
       }
       return '';
-    }
-    ,
+    },
+
+    paramsAdd(key, value){
+      return value ? '&' + key + '=' +value : ''
+    },
 
     loadEmpData() {
       this.loading = true
+      let urlParam = '';
+      for (let searchEmpKey in this.searchEmp) {
+        urlParam += this.paramsAdd(searchEmpKey, this.searchEmp[searchEmpKey])
+      }
       this.getRequest('/api/employee/basic/?currentPage=' +
-          this.currentPage + '&size=' + this.size + '&name=' + this.empName).then(res => {
+          this.currentPage + '&size=' + this.size + urlParam).then(res => {
         if (res) {
           this.tableData = res.data
           this.total = res.total
@@ -741,34 +970,26 @@ export default {
         }
         this.loading = false
       })
-    }
-    ,
+    },
 
     sizeChange(size) {
       this.size = size
       this.loadEmpData()
-    }
-    ,
+    },
 
     changePage(page) {
       this.currentPage = page;
       this.loadEmpData()
-    }
-    ,
+    },
 
     showAddEmp() {
       this.dialogVisible = true
       this.getMaxWorkID()
       this.getAllPositions()
-    }
-    ,
-
+    },
 
     handleSelectionChange() {
-
     }
-
-
   }
 }
 </script>
@@ -791,4 +1012,20 @@ export default {
   color: #606266;
 }
 
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+/*.slide-fade-enter-from{*/
+/*  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);*/
+/*}*/
+
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
 </style>

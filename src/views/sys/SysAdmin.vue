@@ -1,3 +1,4 @@
+<!-- 操作员管理  -->
 <template>
   <div>
     <div style="display: flex; justify-content: center">
@@ -203,8 +204,8 @@ export default {
 }
 
 .box-card {
-  width: 325px;
-  height: 310px;
+  width: 295px;
+  height: 315px;
   margin-right: 20px;
   margin-top: 8px;
 }

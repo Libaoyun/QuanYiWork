@@ -45,6 +45,11 @@ module.exports = {
                     '^/api': '/'
                 }
             },
+            '/ws': {
+                // 是否为ws代理
+                ws: true,
+                target: 'ws://localhost:8081'
+            }
         }
     }
 }

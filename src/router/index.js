@@ -1,5 +1,6 @@
 import VueRouter from 'vue-router'
 import Vue from 'vue'
+
 Vue.use(VueRouter)
 
 
@@ -31,12 +32,23 @@ const routes = [
         redirect: '/login',
         hidden: true
     },
-
     {
-        path: '/empBasic',
-        name: 'empBasic',
-        component: () => import('../views/emp/EmpBasic'),
+        path: '/home',
+        name: 'Home',
+        component: () => import('../views/Home'),
+        children: [
+            {
+                path: '/chat',
+                name: '在线聊天',
+                component: () => import('../views/chat/OnlineChat'),
+            },]
     }
+
+    // {
+    //     path: '/empBasic',
+    //     name: 'empBasic',
+    //     component: () => import('../views/emp/EmpBasic'),
+    // }
 
     // {
     //     path: '/home',

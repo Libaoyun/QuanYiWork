@@ -3,7 +3,14 @@
     <el-container style="height: 500px; border: 1px solid #eee">
       <el-header class="header">
         <div class="title">全易在线办公系统</div>
-        <el-dropdown class="dropdown" @command = "commandHandler">
+        <div>
+          <el-button icon="el-icon-chat-dot-round"
+                     type="primary"
+                     @click="goChat"
+                     style="margin-right: 20px; color: #E6A23C;background-color: palegoldenrod;"
+          >聊天室
+          </el-button>
+          <el-dropdown class="dropdown" @command = "commandHandler">
           <span class="el-dropdown-link">
             {{ user.name }}<i><img :src="user.userFace" alt="用户头像"></i>
           </span>
@@ -13,6 +20,8 @@
             <el-dropdown-item command = "logout"> 注销登录</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
+        </div>
+
       </el-header>
       <el-container>
         <el-aside width="200px">
@@ -28,7 +37,7 @@
           <!--          </el-menu>-->
 
           <!--        加上router代表启用router导航，那么表示下面的菜单子菜单的index就是路由的路径path，因此可以省略手动点击跳转事件  -->
-          <el-menu router
+          <el-menu router background-color="#545c64" text-color="#fff" unique-opened
           >   <!-- unique-opnend代表只打开一层路由而不是每次都打开 -->
             <!--            注意v-if和v-for不能在同一级使用，如果一定要一起用那就将v-for提到外层，因为v-if优先级比for高，可能导致获取不到item-->
             <template v-for="(item, index) in routes">
@@ -112,7 +121,11 @@ export default {
         });
 
       }
-    }
+    },
+
+    goChat(){
+      this.$router.push('/chat')
+    },
     // menuTransform(index) {
     //   this.$router.push(index)
     // }
