@@ -69,10 +69,16 @@ public class PositionController {
         return RespBean.error("删除失败!");
     }
 
-    //    使用Integer[]ids的直接传参形式，默认是@RequestParam，也就是地址字符串拼接,需要加上?param=id的形式
+    /**
+     * 使用Integer[]ids的直接传参形式，默认是@RequestParam，
+     * 也就是地址字符串拼接,需要加上?param=id的形式
+     * @param ids
+     * @return
+     */
     @DeleteMapping("/")
     @ApiOperation(value = "批量删除职位信息")
-    public RespBean deleteByIds(Integer[] ids){       //ids也可以是String，通过逗号分隔，并拆分取出来
+    public RespBean deleteByIds(Integer[] ids){
+        //ids也可以是String，通过逗号分隔，并拆分取出来
         if (positionService.removeByIds(Arrays.asList(ids))){
             return RespBean.success("删除成功!");
         }

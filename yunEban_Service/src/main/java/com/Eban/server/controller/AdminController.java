@@ -44,7 +44,6 @@ public class AdminController {
         }
         return RespBean.error("更新失败!");
     }
-
     @ApiOperation("删除操作员")
     @DeleteMapping("/{id}")
     public RespBean deleteAdmin(@PathVariable Integer id){

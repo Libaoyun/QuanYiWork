@@ -16,7 +16,7 @@ import java.sql.SQLIntegrityConstraintViolationException;
  **/
 
 //该注解就相当于@ResponseBody + @ControllerAdvice,返回JSON数据
-//@RestControllerAdvice
+@RestControllerAdvice
 public class GlobalException {
 
     //处理数据库外键等原因抛出异常，例如某些数据被其他数据关联（外键），那删除操作就会失败，也就会报异常
